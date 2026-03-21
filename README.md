@@ -35,23 +35,71 @@
 
 ---
 
-## 📂 Project Architecture
+## 📂 Project Folder Structure
 
 ```bash
 /
-├── frontend/           # React + Vite application
-│   ├── src/components  # UI components (ChatHeader, Sidebar, etc.)
-│   └── src/hooks       # Custom hooks (streaming, theme, etc.)
+├── backend/                        
+│   └── app/                       # FastAPI Backend (API + AI Logic)
+│       ├── api/                   # Route handlers (chats, users, logs)
+│       ├── core/                  # Config, security, authentication
+│       ├── db/                    # Database connection & session
+│       ├── models/                # SQLAlchemy models
+│       ├── schemas/               # Pydantic schemas (validation)
+│       ├── services/              # Business logic & AI integration
+│       ├── utils/                 # Helper utilities
+│       └── main.py                # App entry point
 │
-├── backend/            # FastAPI server
-│   ├── app/models      # DB models (User, Chat, Message, Logs)
-│   ├── app/services    # AI services (Gemini integration)
-│   └── app/api         # API routes
+├── frontend/                      
+│   └── src/                       # React Source Code
+│       ├── api/                  # API calls (Axios services)
+│       ├── assets/               # Images, icons
+│       ├── components/           # Reusable UI components
+│       ├── hooks/                # Custom React hooks
+│       ├── lib/                  # Utilities (helpers, configs)
+│       ├── pages/                # Route-level components
+│       ├── App.jsx               # Root component
+│       └── main.jsx              # React entry point
 │
-└── README.md
-```
+├── backend/.env                  # Backend environment variables
+├── frontend/.env                 # Frontend environment variables
 
 ---
+
+## 🔍 Folder Responsibilities
+
+### 🔧 Backend (`app/`)
+
+- **api/** → Defines all API endpoints (routers)
+- **core/** → Authentication, config, security
+- **db/** → Database connection & session
+- **models/** → ORM models (User, ChatSession, Message, Logs)
+- **schemas/** → Request/response validation (Pydantic)
+- **services/** → Business logic & AI integration
+- **utils/** → Helper functions
+- **main.py** → FastAPI entry point
+
+---
+
+### 🎨 Frontend (`src/`)
+
+- **api/** → Backend API communication
+- **assets/** → Static files (images, icons)
+- **components/** → Reusable UI components
+- **hooks/** → Custom hooks
+- **lib/** → Utility functions
+- **pages/** → Route-based UI screens
+- **App.jsx** → Main app structure
+- **main.jsx** → React bootstrap
+
+---
+
+## 📌 Notes
+
+- Uses **app-based FastAPI architecture**
+- Uses **src-based React structure (Vite standard)**
+- Clean separation of frontend & backend
+- Designed for **scalable and production-ready deployment**
 
 ## ⚙️ Setup & Installation
 
