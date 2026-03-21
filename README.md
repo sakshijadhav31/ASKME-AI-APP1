@@ -321,33 +321,6 @@ Tracks system activity and user behavior.
 
 ---
 
-## 🗄️ ER Diagram
-
-```mermaid
-erDiagram
-    USER {
-        string id
-        string email
-        string name
-    }
-
-    CHAT_SESSION {
-        uuid id
-        string user_id
-        string title
-        datetime created_at
-    }
-
-    MESSAGE {
-        uuid id
-        uuid chat_id
-        string role
-        text message
-        datetime created_at
-    }
-
-    USER ||--o{ CHAT_SESSION : has
-    CHAT_SESSION ||--o{ MESSAGE : contains
 
 
 ## 📌 Future Improvements
