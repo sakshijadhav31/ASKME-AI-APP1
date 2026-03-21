@@ -93,7 +93,7 @@ Create a `.env` file:
 ```env
 DATABASE_URL=postgresql+asyncpg://user:password@localhost/dbname
 GEMINI_API_KEY=your_google_ai_studio_key
-SECRET_KEY=your_jwt_secret
+GOOGLE_CLIENT_ID=your_google_client_id
 ```
 
 Initialize database:
