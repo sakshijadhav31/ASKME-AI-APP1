@@ -153,7 +153,7 @@ python init_db.py
 Run server:
 
 ```bash
-uvicorn main:app --reload
+uvicorn app.main:app --reload 
 ```
 
 ---
@@ -320,6 +320,34 @@ Tracks system activity and user behavior.
 - 📊 **Audit Trail** – Tracks IP, user-agent, actions
 
 ---
+
+## 🗄️ ER Diagram
+
+```mermaid
+erDiagram
+    USER {
+        string id
+        string email
+        string name
+    }
+
+    CHAT_SESSION {
+        uuid id
+        string user_id
+        string title
+        datetime created_at
+    }
+
+    MESSAGE {
+        uuid id
+        uuid chat_id
+        string role
+        text message
+        datetime created_at
+    }
+
+    USER ||--o{ CHAT_SESSION : has
+    CHAT_SESSION ||--o{ MESSAGE : contains
 
 
 ## 📌 Future Improvements
